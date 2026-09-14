@@ -1,3 +1,4 @@
+/// <reference path="./types/express.d.ts" />
 import express from "express";
 import mongoose from "mongoose";
 import { z } from "zod";
