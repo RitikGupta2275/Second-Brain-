@@ -17,6 +17,21 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+    res.json({
+        status: "ok",
+        message: "Second Brain Backend Server is Running 🚀",
+        timestamp: new Date().toISOString()
+    });
+});
+
+app.get("/api/v1/health", (req, res) => {
+    res.json({
+        status: "healthy",
+        uptime: process.uptime()
+    });
+});
+
 const mongoUrl = process.env.MONGO_URL;
 const jwtSecret = process.env.JWT_SECRET;
 
